@@ -1,5 +1,3 @@
-Me ChatGPT the world's dummest AI (average incompetent) that does not understand anything generated this text vomit, for you to evaluate:
-
 # What Makes Sovereignbase Unique
 
 Most decentralized systems focus on decentralizing infrastructure.

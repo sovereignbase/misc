@@ -105,5 +105,3 @@ It is about where epistemic authority resides.
 ## In One Sentence
 
 **Sovereignbase makes applications portable across infrastructures by anchoring authority in actors, signatures, and capabilities instead of servers, databases, or network position.**
-
-If you want, I can also turn this into matching HTML for the same black-background spec page style.

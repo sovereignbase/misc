@@ -97,8 +97,7 @@ If these rules are crisp, auditable, and cryptographically grounded, infrastruct
 
 If they are vague, then authority quietly slips back into the hosting layer.
 
-Real decentralization is not about topology.
-It is about where epistemic authority resides.
+Real decentralization is about where epistemic authority resides.
 
 ---
 

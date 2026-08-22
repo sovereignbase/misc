@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <path
+      id="outer"
+      fill-rule="evenodd"
+      d="
+        M501 136
+        L200 283
+        L200 657
+        L499 834
+        L798 657
+        L798 282
+        Z
+
+        M499 186
+        L753 311
+        L753 628
+        L501 774
+        L246 629
+        L246 311
+        Z
+      "
+    />
+
+    <path
+      id="inner-left"
+      d="
+        M502 335
+        L398 389
+        L398 451
+        L459 481
+        L459 421
+        L502 397
+        L648 474
+        L647 572
+        L499 657
+        L287 545
+        L287 610
+        L500 728
+        L712 606
+        L712 442
+        Z
+      "
+    />
+
+    <path
+      id="inner-right"
+      d="
+        M501 224
+        L287 330
+        L287 498
+        L482 599
+        L586 543
+        L586 487
+        L518 452
+        L518 512
+        L479 533
+        L348 465
+        L351 364
+        L502 287
+        L715 394
+        L715 330
+        Z
+      "
+    />
+
+    <clipPath id="outer-clip">
+      <use href="#outer"/>
+    </clipPath>
+
+    <clipPath id="inner-left-clip">
+      <use href="#inner-left"/>
+    </clipPath>
+
+    <clipPath id="inner-right-clip">
+      <use href="#inner-right"/>
+    </clipPath>
+
+    <mask
+      id="draw-mask"
+      maskUnits="userSpaceOnUse"
+      x="0"
+      y="0"
+      width="1000"
+      height="1000"
+    >
+      <rect width="1000" height="1000" fill="black"/>
+
+      <!-- Bottom center -> right -> top.
+           Extended slightly past both center tips. -->
+      <g clip-path="url(#outer-clip)">
+        <path
+          class="draw outer-draw"
+          pathLength="1"
+          d="
+            M480 816
+            L500 804
+            L776 643
+            L776 297
+            L500 161
+            L480 151
+          "
+        />
+      </g>
+
+      <!-- Top center -> left -> bottom.
+           Extended slightly past both center tips. -->
+      <g clip-path="url(#outer-clip)">
+        <path
+          class="draw outer-draw"
+          pathLength="1"
+          d="
+            M520 151
+            L500 161
+            L223 297
+            L223 643
+            L500 804
+            L520 816
+          "
+        />
+      </g>
+
+      <g clip-path="url(#inner-left-clip)">
+        <path
+          class="draw inner-draw"
+          pathLength="1"
+          d="
+            M459 480
+            L428 420
+            L440 398
+            L501 372
+            L522 376
+            L667 451
+            L680 474
+            L680 573
+            L671 593
+            L522 680
+            L477 680
+            L314 592
+            L287 545
+          "
+        />
+      </g>
+
+      <g clip-path="url(#inner-right-clip)">
+        <path
+          class="draw inner-draw"
+          pathLength="1"
+          d="
+            M518 452
+            L549 515
+            L538 536
+            L481 559
+            L457 554
+            L329 488
+            L317 467
+            L317 361
+            L327 343
+            L481 265
+            L505 262
+            L692 350
+            L715 393
+          "
+        />
+      </g>
+    </mask>
+
+    <style>
+      .draw {
+        fill: none;
+        stroke: white;
+        stroke-linecap: butt;
+        stroke-linejoin: miter;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+      }
+
+      .outer-draw {
+        stroke-width: 82;
+        animation: draw 1.5s cubic-bezier(.65, 0, .35, 1) forwards;
+      }
+
+      .inner-draw {
+        stroke-width: 92;
+        animation: draw 1.65s cubic-bezier(.65, 0, .35, 1) forwards;
+      }
+
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="1000" height="1000" fill="black"/>
+
+  <g mask="url(#draw-mask)" fill="white">
+    <use href="#outer"/>
+    <use href="#inner-left"/>
+    <use href="#inner-right"/>
+  </g>
+</svg>
